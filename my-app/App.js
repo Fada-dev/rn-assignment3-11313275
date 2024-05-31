@@ -5,7 +5,6 @@ import {
   View,
   SafeAreaView,
   Image,
-  TextInput,
 } from "react-native";
 
 export default function App() {
