@@ -5,6 +5,7 @@ import {
   View,
   SafeAreaView,
   Image,
+  TextInput,
 } from "react-native";
 
 export default function App() {
@@ -21,6 +22,12 @@ export default function App() {
           </View>
           <View style={styles.profileImage}>
             <Image source={require("./Profile-image.png")} />
+          </View>
+        </View>
+        <View style={styles.searchArea}>
+          <TextInput style={styles.searchInput} placeholder="Search" />
+          <View style={styles.filterIcon}>
+            <Image source={require("./Filter.png")} />
           </View>
         </View>
       </View>
@@ -60,4 +67,34 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "condensedBold",
   },
+  searchArea: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 10,
+    marginTop: 10,
+    height: 49,
+    top: 15,
+    left: -10,
+  },
+  filterIcon: {
+    flexDirection: "row",
+    position: "absolute",
+    right: 0,
+    height: 49,
+  },
+  searchInput: {
+    flexDirection: "row",
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 14,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    marginRight: 10,
+    width: 300,
+    height: 49,
+    backgroundColor: "#FBF9F7",
+  },
 });
+
+
