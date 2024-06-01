@@ -7,6 +7,7 @@ import {
   Image,
   TextInput,
 } from "react-native";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 export default function App() {
   return (
@@ -25,9 +26,26 @@ export default function App() {
           </View>
         </View>
         <View style={styles.searchArea}>
-          <TextInput style={styles.searchInput} placeholder="Search" />
+          <View style={styles.searchInputContainer}>
+            <FontAwesome
+              name="search"
+              size={24}
+              color="#000"
+              style={styles.searchIcon}
+            />
+            <TextInput
+              style={[styles.searchInput, { paddingLeft: 20, }]}
+              placeholder="Search"
+            />
+          </View>
           <View style={styles.filterIcon}>
             <Image source={require("./Filter.png")} />
+          </View>
+        </View>
+        <View style={styles.categories}>
+          <Text>Categories</Text>
+          <View style={styles.categoriesTasks}>
+            <Text>Exercise</Text>
           </View>
         </View>
       </View>
@@ -84,17 +102,38 @@ const styles = StyleSheet.create({
     height: 49,
   },
   searchInput: {
+    flex: 1,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    height: 49,
+    color: 'black',
+    placeholderTextColor: 'black', 
+  },
+  searchInputContainer: {
     flexDirection: "row",
+    alignItems: "center",
     borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 14,
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    marginRight: 10,
-    width: 300,
-    height: 49,
     backgroundColor: "#FBF9F7",
+    height: 49,
+    width: 300,
+  },
+  searchIcon: {
+    marginLeft: 12,
+    marginRight: -17,
+  },
+  categories: {
+    top: 50,
+    fontWeight: 700,
+    fontStyle: "lato",
+    fontSize: 20,
+    height: 24,
+    fontColor: "black",
+    width: 96,
+  },
+  categoriesTasks: {
+    borderWidth: 1,
+    borderColor: "black",
   },
 });
-
-
