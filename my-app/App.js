@@ -6,10 +6,82 @@ import {
   SafeAreaView,
   Image,
   TextInput,
+  ScrollView,
 } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-export default function App() {
+const categoriesData = [
+  {
+    title: "Exercise",
+    tasks: 12,
+    categoryImage: require("./pictures/youngwoman.png"),
+  },
+  {
+    title: "Study",
+    tasks: 12,
+    categoryImage: require("./pictures/youngwoman.png"),
+  },
+  {
+    title: "Code",
+    tasks: 12,
+    categoryImage: require("./pictures/youngwoman.png"),
+  },
+  {
+    title: "Travel",
+    tasks: 12,
+    categoryImage: require("./pictures/youngwoman.png"),
+  },
+  {
+    title: "Cook",
+    tasks: 12,
+    categoryImage: require("./pictures/youngwoman.png"),
+  },
+  {
+    title: "Music",
+    tasks: 12,
+    categoryImage: require("./pictures/youngwoman.png"),
+  },
+  {
+    title: "Gardening",
+    tasks: 12,
+    categoryImage: require("./pictures/youngwoman.png"),
+  },
+  {
+    title: "Meditate",
+    tasks: 12,
+    categoryImage: require("./pictures/youngwoman.png"),
+  },
+  {
+    title: "Read",
+    tasks: 12,
+    categoryImage: require("./pictures/youngwoman.png"),
+  },
+  {
+    title: "Art",
+    tasks: 12,
+    categoryImage: require("./pictures/youngwoman.png"),
+  },
+];
+
+const ongoingTasks = [
+  "Mobile App Development",
+  "Web Development",
+  "UI/UX Design",
+  "Database Management",
+  "Server Maintenance",
+  "API Integration",
+  "Testing & QA",
+  "Project Planning",
+  "Client Meetings",
+  "Marketing Strategies",
+  "Content Creation",
+  "SEO Optimization",
+  "Social Media Management",
+  "Product Launch",
+  "Customer Support",
+];
+
+const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -18,7 +90,7 @@ export default function App() {
         </View>
         <View style={styles.header}>
           <View style={styles.headerRow}>
-            <Text style={styles.headerText}>Hello, Devs</Text>
+            <Text style={styles.headerText}>Hello , Devs</Text>
             <Text style={styles.taskMessage}>15 tasks today</Text>
           </View>
           <View style={styles.profileImage}>
@@ -34,7 +106,7 @@ export default function App() {
               style={styles.searchIcon}
             />
             <TextInput
-              style={[styles.searchInput, { paddingLeft: 20, }]}
+              style={[styles.searchInput, { paddingLeft: 20,  placeholderTextColor: 'black'}]}
               placeholder="Search"
             />
           </View>
@@ -42,16 +114,30 @@ export default function App() {
             <Image source={require("./Filter.png")} />
           </View>
         </View>
+
         <View style={styles.categories}>
-          <Text>Categories</Text>
-          <View style={styles.categoriesTasks}>
-            <Text>Exercise</Text>
-          </View>
+          <Text style={styles.categoriesText}>Categories</Text>
         </View>
+
+        <ScrollView horizontal={true} style={styles.categoriesContainer}>
+          {categoriesData.map((category, index) => (
+            <View key={index} style={styles.category}>
+              <Text style={styles.title}>{category.title}</Text>
+              <Text style={styles.tasks}>{category.tasks} Tasks</Text>
+              <View style={styles.categoryImage}>
+                <Image
+                  style={styles.categoryIcons}
+                  source={category.categoryImage}
+                />
+              </View>
+            </View>
+            
+          ))}
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -71,8 +157,7 @@ const styles = StyleSheet.create({
     height: 49,
   },
   taskMessage: {
-    fontSize: 10,
-    marginTop: -3,
+    fontSize: 12,
     fontWeight: "condensedBold",
   },
   profileImage: {
@@ -82,8 +167,9 @@ const styles = StyleSheet.create({
     height: 49,
   },
   headerText: {
-    fontSize: 25,
-    fontWeight: "condensedBold",
+    fontSize: 32,
+    fontWeight: 'bold',
+    height: 37
   },
   searchArea: {
     flexDirection: "row",
@@ -106,8 +192,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 12,
     height: 49,
-    color: 'black',
-    placeholderTextColor: 'black', 
+    fontWeight: 'bold',
   },
   searchInputContainer: {
     flexDirection: "row",
@@ -124,16 +209,55 @@ const styles = StyleSheet.create({
     marginRight: -17,
   },
   categories: {
-    top: 50,
-    fontWeight: 700,
-    fontStyle: "lato",
-    fontSize: 20,
+    marginTop: 40,
+  },
+  categoriesText: {
+    fontWeight: 'bold',
     height: 24,
-    fontColor: "black",
-    width: 96,
+    fontSize: 20,
   },
   categoriesTasks: {
     borderWidth: 1,
     borderColor: "black",
   },
+
+  categoriesContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: 20
+  },
+
+  category:{
+    marginRight: 20,
+    height: 190,
+    width: 180,
+    borderRadius: 10,
+    backgroundColor: 'white',
+    paddingTop: 10,
+  },
+
+  title:{
+    fontWeight: 'bold',
+    marginLeft: 20,
+    fontSize: 15,
+  },
+
+  tasks:{
+    marginLeft: 20,
+    fontSize: 10,
+  },
+
+  categoryImage:{
+    height: 120,
+    width: 130,
+    marginLeft: 20,
+
+  },
+
+  categoryIcons:{
+    backgroundColor: 'white',
+    height: 140,
+    width: 140,
+  },
 });
+export default App;
