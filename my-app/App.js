@@ -19,7 +19,7 @@ const categoriesData = [
   {
     title: "Study",
     tasks: 12,
-    categoryImage: require("./pictures/youngwoman.png"),
+    categoryImage: require("./pictures/workingdesk.png"),
   },
   {
     title: "Code",
@@ -106,7 +106,7 @@ const App = () => {
               style={styles.searchIcon}
             />
             <TextInput
-              style={[styles.searchInput, { paddingLeft: 20,  placeholderTextColor: 'black'}]}
+              style={[styles.searchInput, { paddingLeft: 20, placeholderTextColor: 'black'}]}
               placeholder="Search"
             />
           </View>
@@ -131,9 +131,19 @@ const App = () => {
                 />
               </View>
             </View>
-            
           ))}
         </ScrollView>
+
+        <View style={styles.ongoingTasksSection}>
+          <Text style={styles.sectionTitle}>Ongoing Tasks</Text>
+          <ScrollView style={styles.ongoingTasksContainer}>
+            {ongoingTasks.map((task, index) => (
+              <View key={index} style={styles.task}>
+                <Text style={styles.taskTitle}>{task}</Text>
+              </View>
+            ))}
+          </ScrollView>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -158,7 +168,7 @@ const styles = StyleSheet.create({
   },
   taskMessage: {
     fontSize: 12,
-    fontWeight: "condensedBold",
+    fontWeight: "bold",
   },
   profileImage: {
     flexDirection: "column",
@@ -169,7 +179,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 32,
     fontWeight: 'bold',
-    height: 37
+    height: 37,
   },
   searchArea: {
     flexDirection: "row",
@@ -216,18 +226,11 @@ const styles = StyleSheet.create({
     height: 24,
     fontSize: 20,
   },
-  categoriesTasks: {
-    borderWidth: 1,
-    borderColor: "black",
-  },
-
   categoriesContainer: {
-    display: 'flex',
     flexDirection: 'row',
-    marginTop: 20
+    marginTop: 20,
   },
-
-  category:{
+  category: {
     marginRight: 20,
     height: 190,
     width: 180,
@@ -235,29 +238,52 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingTop: 10,
   },
-
-  title:{
+  title: {
     fontWeight: 'bold',
     marginLeft: 20,
     fontSize: 15,
   },
-
-  tasks:{
+  tasks: {
     marginLeft: 20,
     fontSize: 10,
   },
-
-  categoryImage:{
+  categoryImage: {
     height: 120,
     width: 130,
     marginLeft: 20,
-
   },
-
-  categoryIcons:{
+  categoryIcons: {
     backgroundColor: 'white',
     height: 140,
     width: 140,
   },
+  ongoingTasksSection: {
+    marginTop: 40,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  ongoingTasksContainer: {
+    maxHeight: 300,  // Adjust the height based on your requirement
+  },
+  task: {
+    padding: 15,
+    marginVertical: 5,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    backgroundColor: '#fff',
+    height: 128,
+    justifyContent: 'center'
+  },
+  taskTitle: {
+    fontSize: 16,
+    height: 19,
+    fontWeight: 'bold'
+
+  },
 });
+
 export default App;
