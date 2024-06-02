@@ -24,17 +24,17 @@ const categoriesData = [
   {
     title: "Code",
     tasks: 12,
-    categoryImage: require("./pictures/youngwoman.png"),
+    categoryImage: require("./pictures/code.jpg"),
   },
   {
     title: "Travel",
     tasks: 12,
-    categoryImage: require("./pictures/youngwoman.png"),
+    categoryImage: require("./pictures/travel.jpg"),
   },
   {
     title: "Cook",
     tasks: 12,
-    categoryImage: require("./pictures/youngwoman.png"),
+    categoryImage: require("./pictures/cook.png"),
   },
   {
     title: "Music",
@@ -44,12 +44,12 @@ const categoriesData = [
   {
     title: "Gardening",
     tasks: 12,
-    categoryImage: require("./pictures/youngwoman.png"),
+    categoryImage: require("./pictures/gardening.jpg"),
   },
   {
     title: "Meditate",
     tasks: 12,
-    categoryImage: require("./pictures/youngwoman.png"),
+    categoryImage: require("./pictures/meditate.jpeg"),
   },
   {
     title: "Read",
@@ -59,7 +59,7 @@ const categoriesData = [
   {
     title: "Art",
     tasks: 12,
-    categoryImage: require("./pictures/youngwoman.png"),
+    categoryImage: require("./pictures/art.png"),
   },
 ];
 
@@ -233,8 +233,8 @@ const styles = StyleSheet.create({
   },
   category: {
     marginRight: 20,
-    height: 190,
-    width: 180,
+    height: 192,
+    width: 186,
     borderRadius: 10,
     backgroundColor: 'white',
     paddingTop: 10,
@@ -267,7 +267,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   ongoingTasksContainer: {
-    maxHeight: 300,  // Adjust the height based on your requirement
+    maxHeight: 300, 
   },
   task: {
     padding: 15,
@@ -282,7 +282,7 @@ const styles = StyleSheet.create({
   taskTitle: {
     fontSize: 16,
     height: 19,
-    fontWeight: 'bold'
+    fontWeight: '700'
 
   },
 });
