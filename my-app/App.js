@@ -178,8 +178,9 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 32,
-    fontWeight: 'bold',
-    height: 37,
+    fontWeight: '700',
+    height: 38,
+    fontFamily: 'lato'
   },
   searchArea: {
     flexDirection: "row",
