@@ -32,15 +32,6 @@ The `Button.js` component is a custom `Button` component that inherits from the 
 ### `Image.js`
 The `Image.js` component is a custom `Image` component that inherits from the built-in `Image` component and applies the application's styles.
 
-## Screenshots
+## Screenshot
 
-Here are some screenshots of the To-Do List App:
-
-
-*Header*![Category Selection Screen][]
-
-*Category Selection Screen*![Task Creation Screen][]
-
-*Task Creation Screen*![Completed Tasks Screen][]
-
-#### *Completed Tasks Screen*
+#### *Completed Tasks Screen*![alt text](my-app/pictures/screenshot.jpg)
